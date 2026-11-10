@@ -3,10 +3,10 @@ services:
     build:
       context: .
       args:
-        USERNAME: ${USER:-ros2user}
+        USERNAME: ubuntu
         USER_UID: ${UID:-1000}
         USER_GID: ${GID:-1000}
-    image: ros2-humble-dev:latest
+    image: ros2-jazzy-dev:latest
     container_name: ros2-workspace
     network_mode: host
     ipc: host
@@ -14,7 +14,7 @@ services:
     stdin_open: true
     tty: true
     working_dir: /home/ws
-    user: ${USER:-ros2user}
+    user: ubuntu
 
     environment:
       - ROS_DOMAIN_ID=42
